@@ -12,13 +12,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: MyHomePage(title: 'Super Weather'),
+      home: MyWeather(title: 'Merlo\'s Weather'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class MyWeather extends StatefulWidget {
+  MyWeather({Key key, this.title}) : super(key: key);
 
   final String title;
 
@@ -26,7 +26,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyWeather> {
   var _json = '...';
 
   @override
