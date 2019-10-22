@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: MyWeather(title: 'Merlo\'s Weather'),
+      home: SafeArea(
+        child: MyWeather(title: 'Merlo\'s Weather'),
+      ),
     );
   }
 }
@@ -64,9 +66,10 @@ class _MyHomePageState extends State<MyWeather> {
     );
   }
 
-  _readWeatherData() async {
+  void _readWeatherData() async {
     String dataURL =
         "https://api.darksky.net/forecast/841ce40e2a4665884c6f4830c2ba0aac/37.8267,-122.4233?lang=en&units=si";
+    // https://api.darksky.net/forecast/841ce40e2a4665884c6f4830c2ba0aac/-34.6074,-58.4546?lang=es
     http.Response response = await http.get(dataURL);
     setState(() {
       if (response.statusCode == 200) {
